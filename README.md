@@ -28,29 +28,44 @@ The Benchmarking Process is done by Training the MS2DeepScore model with the All
       * JDK 17
 
 
+
 ## Running the Workflows
 
 1. Preprocessing GNPS and MassBank EU Data
+
+Preparing enviroment:
 
 ```bash
   cd ~/gnps_ml_processing_workflow/GNPS_ML_Processing
   mamba env create --file ./bin/conda_env.yml --prefix ./bin/gnps_ml_processing_env2/
   mamba env create --file ./bin/gnps_ml_processing_matchms.yml --prefix ./bin/gnps_ml_processing_matchms_env/
-  nohup nextflow run nf_workflow.nf --subset=Structural_Similarity_Prediction -bg &
+```
+
+Running the Harmonizing Pipeline:
+
+```bash
+  nohup nextflow run nf_workflow.nf --subset=Structural_Similarity_Prediction -bg 
 ```
 
 2. Split and Prebatch Dataset
 
 ```bash
   cd ~/gnps_ml_processing_workflow/Train_Test_Splits
-  nextflow run Dataset_Splitting.nf
+  nohup nextflow run Dataset_Splitting.nf -bg
 ```
     
 3. Training MS2DeepScore Model with All Pairs Dataset
 
+Build enviroment:
+
 ```bash
   cd ~/Baselines_For_Benchmark
   ./build_environment.sh
+```
+
+Running the training script:
+
+```bash
   cd ~/scripts/ms2deepscore/train/fresh_dataset/
   ./train_all_pairs.sh
 ```
@@ -61,6 +76,7 @@ The Benchmarking Process is done by Training the MS2DeepScore model with the All
   cd ./scripts/ms2deepscore/train/fresh_dataset/
   ./all_pairs_to_all_filters.sh
 ```
+
 ## Acknowledgements
 
  - Computing Resources: Chameleon Cloud (CHI@UC) for providing CPU infrastructure
