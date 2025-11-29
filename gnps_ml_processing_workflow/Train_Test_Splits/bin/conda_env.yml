@@ -1,0 +1,24 @@
+name: splitting_env
+channels:
+  - conda-forge
+  - bioconda
+
+dependencies:
+  - python=3.8
+  - snappy<1.2
+  - pydantic<=1.10.8
+  - numpy
+  - pandas
+  - pyarrow>=5.0.0     # <-- REQUIRED for vaex
+  - vaex-core>=4
+  - vaex>=4            # <-- ensures compatibility
+  - pyteomics
+  - tqdm
+  - expiringdict
+  - rdkit
+  - joblib
+  - pandarallel
+  - pytest
+  - pip
+  - pip:
+      - matchms
