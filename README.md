@@ -44,14 +44,15 @@ Preparing enviroment:
 Running the Harmonizing Pipeline:
 
 ```bash
-  nohup nextflow run nf_workflow.nf --subset=Structural_Similarity_Prediction -bg 
+  nohup nextflow run nf_workflow.nf --subset=Structural_Similarity_Prediction -bg &
 ```
 
 2. Split and Prebatch Dataset
 
 ```bash
   cd ~/gnps_ml_processing_workflow/Train_Test_Splits
-  nohup nextflow run Dataset_Splitting.nf -bg
+  nohup nextflow run Dataset_Splitting.nf -bg &
+  nohup nextflow run Prebatch_Splitting.nf -bg &
 ```
     
 3. Training MS2DeepScore Model with All Pairs Dataset
