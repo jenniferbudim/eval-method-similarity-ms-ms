@@ -36,7 +36,7 @@ The Benchmarking Process is done by Training the MS2DeepScore model with the All
 Preparing enviroment:
 
 ```bash
-  cd ~/gnps_ml_processing_workflow/GNPS_ML_Processing
+  cd ./gnps_ml_processing_workflow/GNPS_ML_Processing
   mamba env create --file ./bin/conda_env.yml --prefix ./bin/gnps_ml_processing_env2/
   mamba env create --file ./bin/gnps_ml_processing_matchms.yml --prefix ./bin/gnps_ml_processing_matchms_env/
 ```
@@ -50,7 +50,7 @@ Running the Harmonizing Pipeline:
 2. Split and Prebatch Dataset
 
 ```bash
-  cd ~/gnps_ml_processing_workflow/Train_Test_Splits
+  cd ./gnps_ml_processing_workflow/Train_Test_Splits
   nohup nextflow run Dataset_Splitting.nf -bg &
   nohup nextflow run Prebatch_Splitting.nf -bg &
 ```
@@ -60,22 +60,22 @@ Running the Harmonizing Pipeline:
 Build enviroment:
 
 ```bash
-  cd ~/Baselines_For_Benchmark
+  cd ./Baselines_For_Benchmark
   ./build_environment.sh
 ```
 
 Running the training script:
 
 ```bash
-  cd ~/scripts/ms2deepscore/train/fresh_dataset/
-  ./train_all_pairs.sh
+  cd ./scripts/ms2deepscore/train/fresh_dataset/
+  ./train_filtered.sh
 ```
 
 4. Testing Model
 
 ```bash
   cd ./scripts/ms2deepscore/train/fresh_dataset/
-  ./all_pairs_to_all_filters.sh
+  ./all_filters_to_all_filters.sh
 ```
 
 ## Acknowledgements
