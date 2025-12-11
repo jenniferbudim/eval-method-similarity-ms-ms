@@ -74,7 +74,7 @@ Running the training script:
 4. Testing Model
 
 ```bash
-  cd ./scripts/ms2deepscore/test/fresh_dataset/
+  cd ./scripts/ms2deepscore/train/fresh_dataset/
   ./all_filters_to_all_filters.sh
 ```
 
