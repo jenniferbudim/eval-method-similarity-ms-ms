@@ -3,7 +3,7 @@
 
 > **Michael Strobel, Alberto Gil-de-la-Fuente, Mohammad Reza Zare Shahneh, Yasin El Abiead, Roman Bushuiev, Anton Bushuiev, Tomáš Pluskal, Mingxun Wang**  
 > *BioMed Central Bioinformatics, 2025*  
-> [Paper](https://rdcu.be/eQkWY) | [Video](https://example.com) | Original Source Code ([Preprocessing Pipeline](https://github.com/Wang-Bioinformatics-Lab/gnps_ml_processing_workflow)) ([Benchmark](https://github.com/Wang-Bioinformatics-Lab/Baselines_For_Benchmark))
+> [Paper](https://doi.org/10.1186/s12859-025-06194-1) | [Video](https://example.com) | Original Source Code ([Preprocessing Pipeline](https://github.com/Wang-Bioinformatics-Lab/gnps_ml_processing_workflow)) ([Benchmark](https://github.com/Wang-Bioinformatics-Lab/Baselines_For_Benchmark))
 
 ---
 
@@ -13,7 +13,9 @@ This repository contains a reproduction attempt for the experiments from the BMC
 
 The Preprocessing Pipeline is used to harmonize the dataset's metadata (data is taken from GNPS Libraries and MassBank EU) and discard entries that doesn't follow the rules. The data is then split and prebatched for the Train and Test process. 
 
-The Benchmarking Process is done by Training the MS2DeepScore model with the All-Pairs dataset (proposed method) and testing the all_pairs model using filtered data to minimize overhead. 
+The Benchmarking Process is done by Training the MS2DeepScore model with the All-Pairs dataset (proposed method) and testing the all_pairs model using filtered data to minimize overhead.
+
+All of the data produced is available on this [Zenodo Repository](https://doi.org/10.5281/zenodo.17743032)
 
 ---
 ## Preprocessing Pipeline and Baseline For Benchmark
@@ -27,8 +29,6 @@ The Benchmarking Process is done by Training the MS2DeepScore model with the All
     * Nextflow
       * JDK 17
 
-
-
 ## Running the Workflows
 
 1. Preprocessing GNPS and MassBank EU Data
@@ -36,7 +36,7 @@ The Benchmarking Process is done by Training the MS2DeepScore model with the All
 Preparing enviroment:
 
 ```bash
-  cd ./gnps_ml_processing_workflow/GNPS_ML_Processing
+  cd ./eval-method-similarity-ms-ms/gnps_ml_processing_workflow/GNPS_ML_Processing
   mamba env create --file ./bin/conda_env.yml --prefix ./bin/gnps_ml_processing_env2/
   mamba env create --file ./bin/gnps_ml_processing_matchms.yml --prefix ./bin/gnps_ml_processing_matchms_env/
 ```
@@ -50,7 +50,7 @@ Running the Harmonizing Pipeline:
 2. Split and Prebatch Dataset
 
 ```bash
-  cd ./gnps_ml_processing_workflow/Train_Test_Splits
+  cd ./eval-method-similarity-ms-ms/gnps_ml_processing_workflow/Train_Test_Splits
   nohup nextflow run Dataset_Splitting.nf -bg &
   nohup nextflow run Prebatch_Splitting.nf -bg &
 ```
@@ -60,7 +60,7 @@ Running the Harmonizing Pipeline:
 Build enviroment:
 
 ```bash
-  cd ./Baselines_For_Benchmark
+  cd ./eval-method-similarity-ms-ms/Baselines_For_Benchmark
   ./build_environment.sh
 ```
 
