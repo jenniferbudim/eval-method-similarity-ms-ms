@@ -12,7 +12,7 @@
             "datePublished": "2025-12-13T12:39:33+00:00",
             "description": "This repository contains a reproduction attempt of the experiments from the BMC Bioinformatics 2025 publication titled 'An Evaluation Methodology for Machine Learning-Based Tandem Mass Spectra Similarity Prediction'. The project focuses on creating a benchmarking pipeline for future ML-based MS/MS similarity approaches. A preprocessing pipeline harmonizes metadata from GNPS Libraries and MassBank EU, filters invalid entries, and prepares train/test splits. The benchmarking process trains MS2DeepScore on an all-pairs dataset and evaluates performance on filtered test data to minimize overhead.",
             "disambiguatingDescription": "Reproduction of an evaluation methodology for ML-based MS/MS similarity prediction",
-            "keywords": "experiment,nextflow",
+            "keywords": "experiment",
             "name": "Reproduced an Evaluation for ML-Based MS/MS Similarity Prediction (BMC Bioinformatics 2025)"
         },
         {
@@ -35,3 +35,4 @@
     ]
 
 }
+
