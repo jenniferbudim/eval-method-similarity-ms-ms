@@ -4,11 +4,6 @@
         {
             "@id": "./",
             "@type": "Dataset",
-            "actionApplication": [
-                {
-                    "@id": "#ChameleonJupyterLab"
-                }
-            ],
             "author": [
                 {
                     "@id": "#author_0"
@@ -36,14 +31,7 @@
             "affiliation": "Krida Wacana Christian University",
             "email": "jennifer.412023017@civitas.ukrida.ac.id",
             "name": "Jennifer Budi Muljono"
-        },
-        {
-            "@id": "#ChameleonJupyterLab",
-            "@type": "SoftwareApplication",
-            "name": "Chameleon JupyterLab",
-            "trovi_arguments": "{}",
-            "trovi_type": "jupyterhub",
-            "url": "https://jupyter.chameleoncloud.org/"
         }
     ]
+
 }
