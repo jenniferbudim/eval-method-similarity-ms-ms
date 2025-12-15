@@ -15,7 +15,7 @@ The Preprocessing Pipeline is used to harmonize the dataset's metadata (data is 
 
 The Benchmarking Process is done by Training the MS2DeepScore model with the All-Pairs dataset (proposed method) and testing the all_pairs model using filtered data to minimize overhead.
 
-All of the data produced is available on this [Zenodo Repository](https://doi.org/10.5281/zenodo.17743032)
+All of the data reproduced is available on this [Zenodo Repository](https://doi.org/10.5281/zenodo.17743032)
 
 ---
 ## Preprocessing Pipeline and Baseline For Benchmark
@@ -55,13 +55,21 @@ Running the Harmonizing Pipeline:
   nohup nextflow run Prebatch_Splitting.nf -bg &
 ```
     
-3. Training MS2DeepScore Model with All Pairs Dataset
+3. Training MS2DeepScore Model with Filtered Dataset
 
 Build enviroment:
 
 ```bash
   cd ./eval-method-similarity-ms-ms/Baselines_For_Benchmark
   ./build_environment.sh
+```
+
+Preparing data:
+Move the output from the gnps_ml_processing_workflow into the /eval-method-similarity-ms-ms/Baselines_For_Benchmark/data/fresh_dataset folder before continuing.
+
+```bash
+  cd ./eval-method-similarity-ms-ms/Baselines_For_Benchmark/data/fresh_dataset
+  ./get_data.sh
 ```
 
 Running the training script:
@@ -77,6 +85,11 @@ Running the training script:
   cd ./scripts/ms2deepscore/train/fresh_dataset/
   ./all_filters_to_all_filters.sh
 ```
+
+## Notes
+
+ - Clear out the nextflow work folders after each workflow finishes to prevent OOM errors
+ - There may be incompatibility issues during conda environment building, adjust the versions of the libraries accordingly.  
 
 ## Acknowledgements
 
