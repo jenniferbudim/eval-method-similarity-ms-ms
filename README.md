@@ -1,9 +1,9 @@
 
-# Reproduced an Evaluation Methodology For Machine Learning-Based Tandem Mass Spectra Similarity Prediction
+# Reproduced an Evaluation Methodology for Machine Learning-Based Tandem Mass Spectra Similarity Prediction
 
 > **Michael Strobel, Alberto Gil-de-la-Fuente, Mohammad Reza Zare Shahneh, Yasin El Abiead, Roman Bushuiev, Anton Bushuiev, Tomáš Pluskal, Mingxun Wang**  
 > *BioMed Central Bioinformatics, 2025*  
-> [Paper](https://doi.org/10.1186/s12859-025-06194-1) | [Video](https://example.com) | Original Source Code ([Preprocessing Pipeline](https://github.com/Wang-Bioinformatics-Lab/gnps_ml_processing_workflow)) ([Benchmark](https://github.com/Wang-Bioinformatics-Lab/Baselines_For_Benchmark))
+> [Paper](https://doi.org/10.1186/s12859-025-06194-1) | [Video](https://youtu.be/aOg_VeXVyMw) | Original Source Code ([Preprocessing Pipeline](https://github.com/Wang-Bioinformatics-Lab/gnps_ml_processing_workflow)) ([Benchmark](https://github.com/Wang-Bioinformatics-Lab/Baselines_For_Benchmark))
 
 ---
 
